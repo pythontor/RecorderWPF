@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="250"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Create_b" Grid.Column="1" Content="Создать" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="231" Click="Create_b_Click"/>
+        <Button x:Name="Delete_b" Content="Удалить" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="349" Click="Delete_b_Click"/>
+        <DatePicker x:Name="calendar" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="493" Grid.ColumnSpan="2" SelectedDateChanged="DatePicker_SelectedDateChanged" SelectedDateFormat="Long" Height="41" />
+        <TextBox x:Name="Rec_name_box" Grid.Column="1" HorizontalAlignment="Center" Margin="0,64,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="Rec_desc_box" Grid.Column="1" HorizontalAlignment="Center" Margin="0,152,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="218"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,27,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top" Margin="0,125,0,0"/>
+        <ListBox x:Name="Rec_desc_listbox" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_SelectionChanged" Margin="10,10,10,10" Grid.Column="0"/>
+
+    </Grid>
+</Window>
